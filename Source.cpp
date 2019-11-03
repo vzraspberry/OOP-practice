@@ -1,44 +1,37 @@
-#include<iostream>
+﻿#include<iostream>
 #include<string>
 using namespace std;
 
-class Teherauto {
+class Member {
 protected:
-	string gyarto;
-	string motor;
-	string fekrendszer;
-	string maximalis_terheles;
+	string name;
+	string title;
 public:
-	Teherauto(string gy, string m, string fek,
-		double teher) {
-		gyarto = gy;
-		motor = m;
-		fekrendszer = fek;
-		maximalis_terheles = teher;
+	Memeber(string n, string t) {
+		name = n;
+		title = t;
 	}
-	void Indit() { }
-	void GaztAd() { }
-	virtual void Fekez() {
-		cout << "A hagyomanyosan fekez." << endl;
+	void Delete() { }
+	void TitleChg() { }
+	virtual void NameChg() {
+		cout << "Nevet változtató függvény." << endl;
 	}
-	void BalraFordul() { }
-	void JobbraFordul() { }
 };
-class Kisteherauto : public Teherauto {
+class Vip : public Member {
 public:
-	Kisteherauto(string gy, string m, string fek)
-		: Teherauto(gy, m, fek, 20) { }
+	Vip(string n, string t)
+		: Vip(gy, m) { }
 };
-class Kamion : public Teherauto {
+class Owner : public Member {
 public:
-	Kamion(string gy, string m, string fek, double teher)
-		: Teherauto(gy, m, fek, teher) { }
-	void Fekez() { cout << "A EBS-sel fekez." << endl; }
-	void Navigal() {}
+	Owner(string n, string t)
+		: Vip(n, t) { }
+	void NameChg() { cout << "Itt is nevet változtat" << endl; }
+	void TitleAdd() {}
 };
 int main() {
-	Kisteherauto posta("ZIL", "Diesel", "l�gf�k");
-	posta.Fekez(); // A hagyomanyosan fekez.
-	Kamion enAutom("Kamaz", "g�zmotor", "EBS", 40);
-	enAutom.Fekez(); // A EBS-sel fekez.
+	Vip oktato("InstrUktor", "vezetőoktató");
+	oktato.TitleChg(); // Title-t változtat.
+	Owner tulaj("TulajDonos", "ceo");
+	tulaj.Fekez(); // Title-t hozzáad.
 }
