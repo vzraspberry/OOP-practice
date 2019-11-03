@@ -33,5 +33,5 @@ int main() {
 	Vip oktato("InstrUktor", "vezetőoktató");
 	oktato.TitleChg(); // Title-t változtat.
 	Owner tulaj("TulajDonos", "ceo");
-	tulaj.Fekez(); // Title-t hozzáad.
+	tulaj.NameChg(); // Nevet változtat.
 }
