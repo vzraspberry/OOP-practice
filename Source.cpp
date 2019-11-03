@@ -7,7 +7,7 @@ protected:
 	string name;
 	string title;
 public:
-	Memeber(string n, string t) {
+	Member(string n, string t) {
 		name = n;
 		title = t;
 	}
@@ -20,12 +20,12 @@ public:
 class Vip : public Member {
 public:
 	Vip(string n, string t)
-		: Vip(gy, m) { }
+		: Member(n, t) { }
 };
 class Owner : public Member {
 public:
 	Owner(string n, string t)
-		: Vip(n, t) { }
+		: Member(n, t) { }
 	void NameChg() { cout << "Itt is nevet változtat" << endl; }
 	void TitleAdd() {}
 };
